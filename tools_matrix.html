@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Matriz de Herramientas DevOps</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                padding: 20px;
+                min-height: 100vh;
+            }
+
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                overflow: hidden;
+            }
+
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 30px;
+                text-align: center;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .header p {
+                opacity: 0.9;
+                font-size: 1.1rem;
+            }
+
+            .content {
+                padding: 30px;
+            }
+
+            .section {
+                margin-bottom: 40px;
+            }
+
+            .section-title {
+                background: #f8f9fa;
+                padding: 15px 20px;
+                border-left: 5px solid #667eea;
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+
+            .table-container {
+                overflow-x: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background: white;
+            }
+
+            thead {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+            }
+
+            th {
+                padding: 15px;
+                text-align: left;
+                font-weight: 600;
+                font-size: 0.95rem;
+            }
+
+            td {
+                padding: 12px 15px;
+                border-bottom: 1px solid #e9ecef;
+            }
+
+            tbody tr:hover {
+                background-color: #f8f9fa;
+            }
+
+            .tool-name {
+                font-weight: 600;
+                color: #667eea;
+            }
+
+            .score {
+                display: inline-block;
+                padding: 5px 10px;
+                border-radius: 20px;
+                font-weight: bold;
+                font-size: 0.9rem;
+            }
+
+            .score-high {
+                background: #d4edda;
+                color: #155724;
+            }
+
+            .score-medium {
+                background: #fff3cd;
+                color: #856404;
+            }
+
+            .score-low {
+                background: #f8d7da;
+                color: #721c24;
+            }
+
+            .badge {
+                display: inline-block;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                margin: 2px;
+            }
+
+            .badge-free {
+                background: #d4edda;
+                color: #155724;
+            }
+
+            .badge-freemium {
+                background: #fff3cd;
+                color: #856404;
+            }
+
+            .badge-paid {
+                background: #f8d7da;
+                color: #721c24;
+            }
+
+            .legend {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 30px;
+            }
+
+            .legend h3 {
+                margin-bottom: 15px;
+                color: #333;
+            }
+
+            .legend-items {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .legend-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .criteria-list {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 30px;
+            }
+
+            .criteria-list ul {
+                list-style: none;
+                padding-left: 0;
+            }
+
+            .criteria-list li {
+                padding: 8px 0;
+                padding-left: 25px;
+                position: relative;
+            }
+
+            .criteria-list li:before {
+                content: "✓";
+                position: absolute;
+                left: 0;
+                color: #667eea;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🛠️ Matriz de Herramientas DevOps</h1>
+                <p>
+                    Framework DevOps para SINCRO - Consultoría en Seguridad
+                    contra Incendios
+                </p>
+            </div>
+
+            <div class="content">
+                <div class="criteria-list">
+                    <h3>📋 Criterios de Evaluación</h3>
+                    <ul>
+                        <li>
+                            <strong>Facilidad de Uso:</strong> Curva de
+                            aprendizaje y simplicidad de configuración
+                        </li>
+                        <li>
+                            <strong>Costo:</strong> Considerando presupuesto
+                            limitado de PyME (objetivo: <$500/año)
+                        </li>
+                        <li>
+                            <strong>Integración:</strong> Compatibilidad con
+                            otras herramientas del stack
+                        </li>
+                        <li>
+                            <strong>Escalabilidad:</strong> Capacidad de crecer
+                            con la organización
+                        </li>
+                        <li>
+                            <strong>Comunidad:</strong> Soporte, documentación y
+                            comunidad activa
+                        </li>
+                        <li>
+                            <strong>Normatividad:</strong> Capacidad para
+                            generar evidencias de cumplimiento (NFPA, ISO)
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CI/CD -->
+                <div class="section">
+                    <div class="section-title">🔄 CI/CD & Orquestación</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Herramienta</th>
+                                    <th>Facilidad</th>
+                                    <th>Costo</th>
+                                    <th>Integración</th>
+                                    <th>Escalabilidad</th>
+                                    <th>Comunidad</th>
+                                    <th>Normatividad</th>
+                                    <th>Score Total</th>
+                                    <th>Recomendación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tool-name">GitHub Actions</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.2/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Jenkins</td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >6/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >6/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7.7/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">GitLab CI</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-freemium"
+                                            >Freemium</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.3/10</span
+                                        >
+                                    </td>
+                                    <td>Alternativa</td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Azure DevOps</td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-freemium"
+                                            >Freemium</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.5/10</span
+                                        >
+                                    </td>
+                                    <td>Corporativa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- IaC -->
+                <div class="section">
+                    <div class="section-title">
+                        🏗️ Infraestructura como Código (IaC)
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Herramienta</th>
+                                    <th>Facilidad</th>
+                                    <th>Costo</th>
+                                    <th>Integración</th>
+                                    <th>Escalabilidad</th>
+                                    <th>Comunidad</th>
+                                    <th>Normatividad</th>
+                                    <th>Score Total</th>
+                                    <th>Recomendación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tool-name">Terraform</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.5/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Ansible</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.8/10</span
+                                        >
+                                    </td>
+                                    <td>Alternativa</td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Pulumi</td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-freemium"
+                                            >Freemium</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7.5/10</span
+                                        >
+                                    </td>
+                                    <td>Alternativa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quality & Security -->
+                <div class="section">
+                    <div class="section-title">🔒 Calidad y Seguridad</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Herramienta</th>
+                                    <th>Facilidad</th>
+                                    <th>Costo</th>
+                                    <th>Integración</th>
+                                    <th>Escalabilidad</th>
+                                    <th>Comunidad</th>
+                                    <th>Normatividad</th>
+                                    <th>Score Total</th>
+                                    <th>Recomendación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tool-name">
+                                        SonarQube Community
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.8/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Snyk</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-freemium"
+                                            >Freemium</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.2/10</span
+                                        >
+                                    </td>
+                                    <td>Complementaria</td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">OWASP ZAP</td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7.7/10</span
+                                        >
+                                    </td>
+                                    <td>DAST Testing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Monitoring -->
+                <div class="section">
+                    <div class="section-title">
+                        📊 Monitoreo y Observabilidad
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Herramienta</th>
+                                    <th>Facilidad</th>
+                                    <th>Costo</th>
+                                    <th>Integración</th>
+                                    <th>Escalabilidad</th>
+                                    <th>Comunidad</th>
+                                    <th>Normatividad</th>
+                                    <th>Score Total</th>
+                                    <th>Recomendación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tool-name">Apache Devlake</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.5/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Grafana</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.5/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Prometheus</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.3/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>COMPLEMENTARIA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Loki</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.0/10</span
+                                        >
+                                    </td>
+                                    <td>Logging</td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Datadog</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-paid"
+                                            >$$$</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.7/10</span
+                                        >
+                                    </td>
+                                    <td>Escalabilidad futura</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Containers -->
+                <div class="section">
+                    <div class="section-title">
+                        📦 Contenedores y Orquestación
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Herramienta</th>
+                                    <th>Facilidad</th>
+                                    <th>Costo</th>
+                                    <th>Integración</th>
+                                    <th>Escalabilidad</th>
+                                    <th>Comunidad</th>
+                                    <th>Normatividad</th>
+                                    <th>Score Total</th>
+                                    <th>Recomendación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tool-name">Docker</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.2/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Docker Compose</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.3/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Kubernetes</td>
+                                    <td>
+                                        <span class="score score-low"
+                                            >4/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7.5/10</span
+                                        >
+                                    </td>
+                                    <td>Futuro (escala)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Testing -->
+                <div class="section">
+                    <div class="section-title">🧪 Testing y QA</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Herramienta</th>
+                                    <th>Facilidad</th>
+                                    <th>Costo</th>
+                                    <th>Integración</th>
+                                    <th>Escalabilidad</th>
+                                    <th>Comunidad</th>
+                                    <th>Normatividad</th>
+                                    <th>Score Total</th>
+                                    <th>Recomendación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="tool-name">JUnit (Backend)</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9.2/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">
+                                        Jasmine/Karma (Frontend)
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >10/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.3/10</span
+                                        >
+                                    </td>
+                                    <td>✅ <strong>SELECCIONADA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Selenium</td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-free"
+                                            >Gratis</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.0/10</span
+                                        >
+                                    </td>
+                                    <td>E2E Testing</td>
+                                </tr>
+                                <tr>
+                                    <td class="tool-name">Cypress</td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-freemium"
+                                            >Freemium</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >9/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-medium"
+                                            >7/10</span
+                                        >
+                                    </td>
+                                    <td>
+                                        <span class="score score-high"
+                                            >8.3/10</span
+                                        >
+                                    </td>
+                                    <td>Alternativa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Resumen Final -->
+                <div class="legend">
+                    <h3>📌 Stack Tecnológico Recomendado - SINCRO</h3>
+                    <div
+                        style="
+                            display: grid;
+                            grid-template-columns: repeat(
+                                auto-fit,
+                                minmax(300px, 1fr)
+                            );
+                            gap: 20px;
+                            margin-top: 20px;
+                        "
+                    >
+                        <div
+                            style="
+                                background: white;
+                                padding: 15px;
+                                border-radius: 8px;
+                                border-left: 4px solid #667eea;
+                            "
+                        >
+                            <h4 style="color: #667eea; margin-bottom: 10px">
+                                CI/CD
+                            </h4>
+                            <ul style="list-style: none; padding: 0">
+                                <li>✅ GitHub Actions</li>
+                                <li>✅ GitHub Projects (Gestión)</li>
+                                <li>✅ Jenkins</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="
+                                background: white;
+                                padding: 15px;
+                                border-radius: 8px;
+                                border-left: 4px solid #764ba2;
+                            "
+                        >
+                            <h4 style="color: #764ba2; margin-bottom: 10px">
+                                IaC
+                            </h4>
+                            <ul style="list-style: none; padding: 0">
+                                <li>✅ Terraform (Provisioning)</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="
+                                background: white;
+                                padding: 15px;
+                                border-radius: 8px;
+                                border-left: 4px solid #667eea;
+                            "
+                        >
+                            <h4 style="color: #667eea; margin-bottom: 10px">
+                                Calidad & Seguridad
+                            </h4>
+                            <ul style="list-style: none; padding: 0">
+                                <li>✅ SonarQube Community</li>
+                                <li>✅ Snyk (Vulnerabilidades)</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="
+                                background: white;
+                                padding: 15px;
+                                border-radius: 8px;
+                                border-left: 4px solid #764ba2;
+                            "
+                        >
+                            <h4 style="color: #764ba2; margin-bottom: 10px">
+                                Observabilidad
+                            </h4>
+                            <ul style="list-style: none; padding: 0">
+                                <li>✅ Apache Devlake</li>
+                                <li>✅ Prometheus (Métricas)</li>
+                                <li>✅ Grafana (Dashboards)</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="
+                                background: white;
+                                padding: 15px;
+                                border-radius: 8px;
+                                border-left: 4px solid #667eea;
+                            "
+                        >
+                            <h4 style="color: #667eea; margin-bottom: 10px">
+                                Contenedores
+                            </h4>
+                            <ul style="list-style: none; padding: 0">
+                                <li>✅ Docker</li>
+                                <li>✅ Docker Compose</li>
+                            </ul>
+                        </div>
+                        <div
+                            style="
+                                background: white;
+                                padding: 15px;
+                                border-radius: 8px;
+                                border-left: 4px solid #764ba2;
+                            "
+                        >
+                            <h4 style="color: #764ba2; margin-bottom: 10px">
+                                Testing
+                            </h4>
+                            <ul style="list-style: none; padding: 0">
+                                <li>✅ JUnit (Backend)</li>
+                                <li>✅ Jasmine/Karma (Frontend)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div
+                        style="
+                            margin-top: 30px;
+                            padding: 20px;
+                            background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                            );
+                            color: white;
+                            border-radius: 10px;
+                        "
+                    >
+                        <h3 style="margin-bottom: 15px">
+                            💰 Estimación de Costos
+                        </h3>
+                        <div
+                            style="
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                gap: 10px;
+                            "
+                        >
+                            <div>
+                                <strong>Herramientas Gratis:</strong> $0/año
+                            </div>
+                            <div><strong>Snyk Free Tier:</strong> $0/año</div>
+                            <div>
+                                <strong>VPS (2 instancias):</strong> ~$240/año
+                            </div>
+                            <div><strong>Capacitación:</strong> $100/año</div>
+                        </div>
+                        <div
+                            style="
+                                margin-top: 15px;
+                                padding: 15px;
+                                background: rgba(255, 255, 255, 0.2);
+                                border-radius: 5px;
+                                text-align: center;
+                            "
+                        >
+                            <strong style="font-size: 1.3rem"
+                                >TOTAL ESTIMADO: ~$340/año</strong
+                            >
+                            <p style="margin-top: 5px; font-size: 0.9rem">
+                                ✅ Dentro del presupuesto objetivo (<$500/año)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
